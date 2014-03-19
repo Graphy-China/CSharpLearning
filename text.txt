@@ -1,3 +1,26 @@
- This is a not work TEst
- 
-  Graphy.Inc
+/*
+ * Graphy.Inc
+ *
+ */
+
+----------------------------------------------
+- Concept
+
+  WorkDirectory   StageArea       gitDirectory
+   modified        staged            committed.
+
+-----------------------------------------------
+- config
+
+git config <option>: --system  --global --local.
+
+git config --global user.name "xxxxx"
+git config --global user.email xxxx@xxxx.com
+git config --global core.editor emacs
+git config --global merge.tool  xxxx
+git config <option>  --list
+-----------------------------------------------
+
+
+
+
