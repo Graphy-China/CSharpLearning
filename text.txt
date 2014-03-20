@@ -3,6 +3,7 @@
  *
  */
 
+Chapter 1.
 ----------------------------------------------
 - Concept
 
@@ -21,6 +22,52 @@ git config --global merge.tool  xxxx
 git config <option>  --list
 -----------------------------------------------
 
+Chapter 2.
+----------------------------------------------
 
+----------------------------
+Getting a git repository:
+----------------------------
+ 1. Start tracking an existing project:
+    1)  git init 
+    2)  add files that are to be tracked and do initial commit.
+        git add *.c
+        git add README
+        git commit -m 'initial project commit'
 
+ 2. Clone an existing repository
+    git clone https://github.com/Graphy-China/CSharpPro.git ProCSharp36
+ 
+--------------
+Ingore files:
+-------------
+  .gitignore
+    # comment
+    *.a		# no .a files
+    !lib.a	# But do track lib.a
+    /TODO	# only ignore the root TODO file.
+    build/	# ignore build directory
+    doc/*.txt	# ingore doc/*.txt files. 
+  
+---------------
+Tracking files:
+---------------
+   git status - report file status.
+   git add files  - stage files ( begin tracking)
+   git remove files - untracking the files.
+
+-------------------
+Working with Remote
+-------------------
+   git remote add [shortname] [url]	 # Add a remote repository. 
+   git remote rename [from] [to]	 # rename repository [from] to [to]
+   git remote rm     [shortname]	 # remove repository.
+   git remote -v  	      		 # List remote repository.
+   git fetch [remote-name]		 # pulls,  no merge.
+   git pull  [remote-name]		 # pulls,  and merge.
+   git push  [remote-name] [branch-name] # push committed to remote.eg: git push CSharpPro master
+   
+
+   
+    
 
