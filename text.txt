@@ -52,9 +52,14 @@ Ingore files:
 ---------------
 Tracking files:
 ---------------
-   git status - report file status.
-   git add files  - stage files ( begin tracking)
-   git remove files - untracking the files.
+   git status		# report file status.
+   git add files       	# stage files ( begin tracking)
+   git remove files    	# untracking the files.
+   git diff   	    	# Show Difference: work directory vs staged area
+   git diff --cached	# Show Difference: Staged areas vs last commit.
+
+   git commit		# commit all staged areas.
+   git commit -a -m ""  # commit all staged areas and modified by not staged files.
 
 -------------------
 Working with Remote
