@@ -54,9 +54,12 @@ Tracking files:
 ---------------
    git status		# report file status.
    git add files       	# stage files ( begin tracking)
+   git reset HEAD files	# unstage files.
    git remove files    	# untracking the files.
    git diff   	    	# Show Difference: work directory vs staged area
    git diff --cached	# Show Difference: Staged areas vs last commit.
+
+   git checkout -- files # M -> unmodified. ( file is not staged yet).
 
    git commit		# commit all staged areas.
    git commit -a -m ""  # commit all staged areas and modified by not staged files.
@@ -78,10 +81,34 @@ Working with Remote
    git remote rename [from] [to]	 # rename repository [from] to [to]
    git remote rm     [shortname]	 # remove repository.
    git remote -v  	      		 # List remote repository.
-   git fetch [remote-name]		 # pulls,  no merge.
-   git pull  [remote-name]		 # pulls,  and merge.
+   git fetch [remote-name] [branch-name] # pulls,  no merge.
+   git pull  [remote-name] [branch-name] # pulls,  and merge.
    git push  [remote-name] [branch-name] # push committed to remote.eg: git push CSharpPro master
-   
+   git remote show [remote-name] 	 # show remote information.
+
+-------------------
+Working with tag:
+	lightweighted tag vs Annotated tag.
+-------------------
+   git tag [-l '4.2.*']			# list tags.
+   git tag -a v1.0.0 -m "message"	# add an annotated tag.
+   git tag -s v1.0.0 -m "message"	# GPG annotated tag.
+   git tag v1.0.0-lw 			# light weighted tag. Do not supply -a -s -m.
+   git tag -v [tag-name]		# verify tag.
+   git push [remote-name] [tag-name]	# verify tag.   tag-name = --tags
+-------------------
+Git allias
+-------------------
+git config --global  alias.co checkout
+git config --global  alias.cm commit
+git config --global  alias.unstage 'reset HEAD --'
+git config --global  alias.last 'log -1 HEAD'
+git config --global  alias.visual '!gitk'
+
+-----------------------------------------------
+
+Chapter 3.
+-----------------------------------------------
 
    
     
