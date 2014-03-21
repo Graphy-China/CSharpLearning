@@ -61,6 +61,16 @@ Tracking files:
    git commit		# commit all staged areas.
    git commit -a -m ""  # commit all staged areas and modified by not staged files.
 
+   git rm file	    	# Remove a file. should commit for final delete.
+   git rm -f file	# force to remove.
+   git rm --cached	# keep the file on  hard drive but not have Git track it anymore.
+   
+   git mv file-from file-to # Rename a file.
+
+   git log <option> 	# show what happens. Option:-p -2 --stat
+       	   		# git log --pretty=format:"%h %s" --graph
+
+   git commit --amend	#
 -------------------
 Working with Remote
 -------------------
