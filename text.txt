@@ -110,6 +110,23 @@ git config --global  alias.visual '!gitk'
 Chapter 3.
 -----------------------------------------------
 
-   
+-------------------
+Branch
+-------------------
+git push [remote-name] testing	 # push to testing branch.
+
+git branch testing	# create a new branch named "testing" . Note: HEAD is still pointing to master.
+git checkout testing	# switch to "testing" branch. Note: HEAD now points to testing.
+
+git checkout -b testing # create and switch to "testing" at the same time.
+
+git checkout master
+git merge testing	# merge testing to master.
+
+git branch -d testing	# remove a branch.
+git branch [-v]		# list all branches.
+
+git branch --no-merged  # list all branches not merged.
+
     
 
