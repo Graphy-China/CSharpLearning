@@ -113,7 +113,6 @@ Chapter 3.
 -------------------
 Branch
 -------------------
-git push [remote-name] testing	 # push to testing branch.
 
 git branch testing	# create a new branch named "testing" . Note: HEAD is still pointing to master.
 git checkout testing	# switch to "testing" branch. Note: HEAD now points to testing.
@@ -123,10 +122,24 @@ git checkout -b testing # create and switch to "testing" at the same time.
 git checkout master
 git merge testing	# merge testing to master.
 
-git branch -d testing	# remove a branch.
-git branch [-v]		# list all branches.
+git branch -d testing	# remove a branch if branch is clean.
+git branch -D testing	# remove a branch regardless clean or not.
+git branch [-v]		# list last commit on each branch.
 
 git branch --no-merged  # list all branches not merged.
+git branch --merged	# list all branches merged.
+
+: remote branch. origin/master
+git push [remote-name] testing:[remote-branch]	 # push local testing branch to [remote-branch].
+git fetch origin	# move origin/master to its new position.
+git checkout -b AirPrint origin/AirPrint       # track remote branch to local branch.
+git checkout -b [branch] [remotename]/[branch] # track remote branch to local branch.
+git checkout --track [remotename]/[branch]     # track remote branch to local branch.
+git push [remotename]  :remoteb-branch	       # delete remote branch.
+
+-------------------
+Rebasing
+-------------------
 
     
 
