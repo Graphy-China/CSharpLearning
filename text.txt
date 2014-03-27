@@ -129,6 +129,9 @@ git branch [-v]		# list last commit on each branch.
 git branch --no-merged  # list all branches not merged.
 git branch --merged	# list all branches merged.
 
+git branch -a		# list all branches
+git branch 		# list all local branches.
+
 : remote branch. origin/master
 git push [remote-name] testing:[remote-branch]	 # push local testing branch to [remote-branch].
 git fetch origin	# move origin/master to its new position.
@@ -151,3 +154,13 @@ Chapter 4. Git on server. (Skip)
 
 Chapter 5. Distributed Git. ( * )
 -----------------------------------------------
+git diff --check	# Check whitespace error.
+git add  --patch	# Partially stage the file if it is modified  serverial times.
+
+WorkFlow 1: Private Small Team.
+ 1 - merge work into master.: git checkout master | git merge [branch-name]
+ 2 - fetch origin/master.   : git fetch origin
+ 3 - git log --no-merges origin/master ^[branch]  : show difference from original master.
+ 3 - merge origin/master.   : git merge origin/master | git commit
+ 4 - push  to remote.	    : git push origin master
+
