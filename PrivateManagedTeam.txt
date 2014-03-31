@@ -1,0 +1,46 @@
+====================================================================
+Private Managed Team : https://github.com/Graphy-China/CSharpPro.git
+====================================================================
+			FeatureA	FeatureB	Master
+John			   *
+Jessica			   *		   *
+Josie			   		   *
+
+Integration-manager					  *
+--------------------------------------------------------------------
+Jessica on FeatureA:						Josie on FeatureB				                         John on FeatureA
+  1  git checkout -b FeatureA					1  git checkout -b FeatureBee						 1. git fetch origin
+  2  modify files... 						2  modify files... 							 2. git checkout -b FeatureA origin/FetureA
+  3  git commit -am "Add ShowAll command to BooksUICommand"	3  git commit -am "FeatureBee: Add ShowIDString to BookUI.xaml.cs"       3. modifi files on FeatureA
+  4  git push origin FeatureA:FeatureA 	    			4  git push origin FeatureBee:FeatureBee	   			 4. git commit -am "FeatureA: BooksUICommands. Add comment"
+  5  email to John -> John.FeatureA.1				5  email to Jessica -> Jessica.FeatureB.5				 5. git push origin FeatureA:FeatureA
+     	      	      						   	    	       							 6. email to Jessica to info the changes.->Jessica.FeatureA(1).1
+Switch to FeatureB:
+  1  git fetch origin
+  2  git checkout -b featureB origin/master
+  3  modify files ....
+  4  git commit -am "FeatureB: Add IDString"
+  5  got email from Josie about her work.
+  6  git fetch origin.  # get Josie's change.
+  7  git merge origin/FeatureBee -m "merge Josie's change on FeatureBee"
+  8  git push origin FeatureB:FeatureBee   # push merged FeatureB to remote FeatureBee.
+  9  email to Integrator FeatureBee is finished.
+
+Switch to FeatureA(1):
+  1 git fetch origin
+  2 git log origin/FeatureA ^FeatureA	# see the changes that John make
+  3 git checkout FeatureA   		# switch to her own branch of FeatureA
+  4 git merge origin/FeatureA -m "xyz"	# merge John's change
+  5 veryfy work for John's change.	# 
+  6 git commit -am "FeatureA:Verify John's change."	# commit verified change.
+  7 git push origin FeatureA:FeatureA	# push to remote FeatureA
+  9 email to Integrator Feature A is finished.
+
+
+Integrator Master:
+  1 git fetch origin
+  2 git merge origin/FeatureA
+  3 git merge origin/FeatureB
+  4 git push origin master
+
+
