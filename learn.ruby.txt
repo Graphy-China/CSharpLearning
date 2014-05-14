@@ -156,3 +156,8 @@ Symbol is immutable, it will not change.(usage: used in hash)
  - instance_variables
  ** 
  
+*===================== Dynamic typing ====================
+ - never write abstract classes/interfaces
+ - 
+
+*===================== Write Specs ====================
