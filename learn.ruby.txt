@@ -160,4 +160,9 @@ Symbol is immutable, it will not change.(usage: used in hash)
  - never write abstract classes/interfaces
  - 
 
-*===================== Write Specs ====================
+*===================== Write Specs: test frame work =============
+
+ - Test:Unit - XUnit alike test framework. refer to document_test.rb
+ - rspec     - ruby spec (RSpec). refer to document_spec.rb.
+ - ideal test xexrcises exactly one class at a time.
+ - stub and mock
