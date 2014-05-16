@@ -166,3 +166,5 @@ Symbol is immutable, it will not change.(usage: used in hash)
  - rspec     - ruby spec (RSpec). refer to document_spec.rb.
  - ideal test xexrcises exactly one class at a time.
  - stub and mock
+ - ut should run fast/ should run quiet/independent one another/.
+   Do make shre that your tests will actually fail.
