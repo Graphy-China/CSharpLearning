@@ -180,8 +180,15 @@ Symbol is immutable, it will not change.(usage: used in hash)
 * =============================== equality ========================
 
   - eql?
-  - equal?  : to test object identity.
-  - ==
+  - equal?  : to test object identity. cannot be overidded.
+  - ==      : default behavior is defined in Object. Default behavior is same as equal?. can be overidded.
   - ===
+
+* =============================== ========================
+
+ 1. A.instance_of?(B) : A is an instance of class B, No subclass allowed.
+ 2. A.kind_of?(B)     : A is an instance of class B, or instance of B's subclass
+ 3. A.respond_to?(:method)  : If A has the "method" method.
+
 
  
