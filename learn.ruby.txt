@@ -179,11 +179,14 @@ Symbol is immutable, it will not change.(usage: used in hash)
 
 * =============================== equality ========================
 
-  - eql?
+  - eql?    : compare hash code of two object. default defined in Object. can be overrided. Default implementation is same as equal?  : if a.eql?(b) then a.hash == b.hash.
   - equal?  : to test object identity. cannot be overidded.
   - ==      : default behavior is defined in Object. Default behavior is same as equal?. can be overidded.
-  - ===
+  - ===     : RegExp match with string in case statements.
+  - 
 
+
+  - a<=>b   : -1 if a < b. 0 if a == b. 1 if a > b
 * =============================== ========================
 
  1. A.instance_of?(B) : A is an instance of class B, No subclass allowed.
