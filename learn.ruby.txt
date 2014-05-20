@@ -168,3 +168,20 @@ Symbol is immutable, it will not change.(usage: used in hash)
  - stub and mock
  - ut should run fast/ should run quiet/independent one another/.
    Do make shre that your tests will actually fail.
+
+* =====  Construct class from Short/Focused Mehtods : composed method technique =======
+  1. Each method should do a single thing - focus on solving a single aspect of the probrlem
+  2. Each method needs to operate at a single conceptual level: Simply put, don't mix high-level logic with the nitty-gritty.
+  3. Each method needs to have a name that reflects its purpose.
+
+  - let program says what it does.
+  - easier to test.
+
+* =============================== equality ========================
+
+  - eql?
+  - equal?  : to test object identity.
+  - ==
+  - ===
+
+ 
