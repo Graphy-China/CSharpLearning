@@ -204,7 +204,7 @@ Symbol is immutable, it will not change.(usage: used in hash)
  2. - singleton methods are stuck to a single object instance.
     - singleton methods override any regular class-defined methods.
  
-* ================ class method    ==========================
+* ================ class level method    ==========================
 1.  class method is singleton method on class object.
 
   class << MyClass
@@ -213,3 +213,13 @@ Symbol is immutable, it will not change.(usage: used in hash)
   end
 2. class method: MyClass.class_method.
    Note: instance of MyClass totally ignorant about class methods.
+
+* ================ class level data      ==========================
+1. class variable: @@.  # vertical global variables
+2. class instance variable: stick to class, no inheritance tree tracking
+
+   @default_font = :numbes
+   class << self
+     attr_accessor :default_font
+   end
+
