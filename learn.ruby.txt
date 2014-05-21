@@ -193,5 +193,23 @@ Symbol is immutable, it will not change.(usage: used in hash)
  2. A.kind_of?(B)     : A is an instance of class B, or instance of B's subclass
  3. A.respond_to?(:method)  : If A has the "method" method.
 
-
+* ================= singleton method  ========================
+ 1. - Format 1: def instance.method_name
+    - Format 2: class << instance
+      	     	  # define singleton method 1.
+		  # define singleton method 2.
+		  #  ...
+		end
+      
+ 2. - singleton methods are stuck to a single object instance.
+    - singleton methods override any regular class-defined methods.
  
+* ================ class method    ==========================
+1.  class method is singleton method on class object.
+
+  class << MyClass
+    def class_method  # class method.
+    end
+  end
+2. class method: MyClass.class_method.
+   Note: instance of MyClass totally ignorant about class methods.
