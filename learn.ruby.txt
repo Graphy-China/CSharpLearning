@@ -245,6 +245,9 @@ Symbol is immutable, it will not change.(usage: used in hash)
 
 7. mixin: share common code among otherwise unrelated classes.
    include module_name # mixin instance level methods.
+   
+   # : include a module and it becomes the nearest parent "class" of the including class.
+
 8. extend: extend class level method by including module level method.
    class << self
      include module_name
