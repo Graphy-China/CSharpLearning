@@ -242,3 +242,13 @@ Symbol is immutable, it will not change.(usage: used in hash)
 
 6. when should we create a namespace?
    If creating a lot of names that all start with the same word.
+
+7. mixin: share common code among otherwise unrelated classes.
+   include module_name # mixin instance level methods.
+8. extend: extend class level method by including module level method.
+   class << self
+     include module_name
+   end
+
+   or :  extend module_name
+9.
