@@ -223,3 +223,22 @@ Symbol is immutable, it will not change.(usage: used in hash)
      attr_accessor :default_font
    end
 
+* ========================= module      ==========================
+1. modules can contains methods constants classes, and even other modules
+2. usage of module: 
+    1) module_name::element_name
+    2) include module_name
+       element_name.
+3. module level method:
+   module mymodule
+     def self.method_name
+       # ....
+     end
+   end
+4. moudle can accross several source files.
+5. module is an object, too.
+   - the_module = module_name
+   - module can be switched in runtime. (import for parall swith. refer to: p186)
+
+6. when should we create a namespace?
+   If creating a lot of names that all start with the same word.
