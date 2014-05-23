@@ -255,3 +255,12 @@ Symbol is immutable, it will not change.(usage: used in hash)
 
    or :  extend module_name
 9.
+
+* ========================= block    ==========================
+ - method that has yield.
+ - block is passed in as a parameter.
+ - parameters can be passed into block.
+ - Iterator: method with yield.
+ - Iterator: main iterator should be named as "each"
+ - Iterator: class that can be mixin with Enumerable.
+ - Iterator: iterator with Enumerator class.
