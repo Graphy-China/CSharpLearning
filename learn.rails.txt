@@ -1,0 +1,45 @@
+
+1. Rails frame work structure:
+  
+  app: controller # controller classes.
+       view	  # views(html)
+       view\layouts #  html templates.
+       model
+
+  config: databases.yml: database connection information.
+  	  routes.rb : routes for this application.
+  db: database.
+  
+  Gemfile: - gems that is required for this pproject. :  bundle install.
+  lib:
+
+
+rails api: link_to
+
+2. 1) rails new demo
+   rails new demo	# create application.
+ 
+   2) create controller and views
+      rails g controller welcome :
+      a) create welcome_controller.rb			# create a controller file: controllername_controller.rb
+      b) create views/welcome/				# create a view directory corresponds to controllername.
+      c) add a route into rounts.rb:
+         get  "welcome/say_hello" => "welcome#say"	# user add rounts to rounts.rb.
+
+	 root :to => "welcome#index" 			# set main page.
+      d) create views/welcome/say.html.erb. 	     	# user can add contents for this root. (function.html.erb)
+   
+      
+
+
+
+
+
+
+   
+   
+   
+
+
+
+
