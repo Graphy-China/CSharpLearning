@@ -171,12 +171,12 @@ file_doc = BlockBasedArchivalDocument.new('file','russ') do
 end
 puts file_doc.content
 
-=begin
+require 'net/http'
 google_doc = BlockBasedArchivalDocument.new('silly', 'russ') do
   Net::HTTP.get_response('www.google.com', '/index.html').body
 end
 puts google_doc.content
-=end
+
 
 #5. Instant block objects with "lambda"
 class Document_v2
