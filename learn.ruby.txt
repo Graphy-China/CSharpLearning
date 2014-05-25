@@ -264,3 +264,13 @@ Symbol is immutable, it will not change.(usage: used in hash)
  - Iterator: main iterator should be named as "each"
  - Iterator: class that can be mixin with Enumerable.
  - Iterator: iterator with Enumerator class.
+
+* ========================= hook    ==========================
+ - inherited
+ - included
+ - at_exit
+ - method_missing
+ - method_added
+ - trace_var
+ - set_trace_func
+ - 
