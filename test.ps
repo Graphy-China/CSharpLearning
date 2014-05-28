@@ -1,0 +1,41 @@
+1
+2
+3456 xyz
+
+==================================
+syu@Kylin:~/learnruby/rail.proj/demo/db$ rails g scaffold person name:string bio:text birthday:date
+Warning: Running `gem pristine --all` to regenerate your installed gemspecs (and deleting then reinstalling your bundle if you use bundle --path) will improve the startup performance of Spring.
+      invoke  active_record
+      create    db/migrate/20140524062540_create_people.rb
+      create    app/models/person.rb
+      invoke    test_unit
+      create      test/models/person_test.rb
+      create      test/fixtures/people.yml
+      invoke  resource_route
+       route    resources :people
+      invoke  scaffold_controller
+      create    app/controllers/people_controller.rb
+      invoke    erb
+      create      app/views/people
+      create      app/views/people/index.html.erb
+      create      app/views/people/edit.html.erb
+      create      app/views/people/show.html.erb
+      create      app/views/people/new.html.erb
+      create      app/views/people/_form.html.erb
+      invoke    test_unit
+      create      test/controllers/people_controller_test.rb
+      invoke    helper
+      create      app/helpers/people_helper.rb
+      invoke      test_unit
+      create        test/helpers/people_helper_test.rb
+      invoke    jbuilder
+      create      app/views/people/index.json.jbuilder
+      create      app/views/people/show.json.jbuilder
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/people.js.coffee
+      invoke    scss
+      create      app/assets/stylesheets/people.css.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.css.scss
+syu@Kylin:~/learnruby/rail.proj/demo/db$
