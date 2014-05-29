@@ -41,9 +41,12 @@ class EventsController < ApplicationController
 
   def update
     # @event = Event.find(params[:id]) # replaces by before_filter
-    @event.update_attributes(params[:event])
     
-    redirect_to :action => :show, :id => @event
+    if @event.update_attributes(params[:event])
+      redirect_to :action => :show, :id => @event
+    else
+      render :action => :edit
+    end
   end
 
   def destroy
