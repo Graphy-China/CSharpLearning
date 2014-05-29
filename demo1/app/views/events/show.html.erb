@@ -1,0 +1,8 @@
+
+<%= @event.name %>
+<%= simple_format(@event.description) %>
+<%= @event.is_public.to_s %>
+<%= @event.capacity %>
+<%= @event.status %>
+
+<p> <%= link_to 'Back to Index', :controller => 'events', :action => 'index' %> </p>
