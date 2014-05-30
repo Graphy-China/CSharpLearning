@@ -22,6 +22,7 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
 
     if @event.save
+      flash[:noticec]="event was successfully created"
       redirect_to :action => :index
     else
       #redirect_to :action => :new  # redirect to new action
@@ -31,7 +32,7 @@ class EventsController < ApplicationController
 
   def show
    # @event = Event.find(params[:id]) # replaces by before_filter
-    @page_title = @event.name
+    page_title = @event.name
   end
 
   # edit steps: edit -> update
@@ -43,6 +44,7 @@ class EventsController < ApplicationController
     # @event = Event.find(params[:id]) # replaces by before_filter
     
     if @event.update_attributes(params[:event])
+      flash[:notice] = 'event was successfully updated'
       redirect_to :action => :show, :id => @event
     else
       render :action => :edit
@@ -52,7 +54,7 @@ class EventsController < ApplicationController
   def destroy
     # @event = Event.find(params[:id]) # replaces by before_filter
     @event.destroy
-
+    flash[:alert] = "event was siccessfully destroyed"
     redirect_to :action => :index
   end
 
