@@ -29,16 +29,46 @@ rails api: link_to
 	 root :to => "welcome#index" 			# set main page.
       d) create views/welcome/say.html.erb. 	     	# user can add contents for this root. (function.html.erb)
    
-      
+
+--------------------------------------------------------------
+# controller      
+0. attr_accessible.
+
+1. before_filter: 
+   before_filter :find_entry, :only => [:show, :edit, :update, :destroy, :crawl]
+   desp: enable executate the same function before specified action.
+   ques: ":only" what is it?
+
+2. render :json => result
+   render :html
+   render :xml
+   render :action => :new
+
+3. redirect_to entry_url(@site_info)
+
+4. flash
+
+5. respond_to do |format|
+     format.html {@page_title = @reference.ref_name}
+
+-------------------------------------------------------------
+# model
+1. validates_presence_of :site_name
+2. scope :pending, -> {where(status: I18n.t("entry.status.pending")) }
+3. ActiveRecord.where.order.limit
+4. has_many :SiteContacts,  :dependent => :destroy
+   has_many :TrackingNotes, :dependent => :destroy
+
+   SiteContacts.build?
+5. belongs_to :SiteInfo
 
 
+-------------------------------------------------------------
+# view
+1. link_to  class: 
+2. <%= form_for @entry, :url => entrie_path(@entry), :method => :post, html: {class: "edit_form-center"} do |f| %>
+3. render: partial => 'form'. :locals => {:f => f}
 
-
-
-
-   
-   
-   
 
 
 
