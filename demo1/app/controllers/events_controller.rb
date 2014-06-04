@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
-  before_filter :find_event :only => [:show, :edit, :update, :destroy]
+  before_filter :find_event, :only => [:show, :edit, :update, :destroy]
 
   def index
     @events = Event.all
-    
+   
     # respond_to
 
     respond_to do |format|

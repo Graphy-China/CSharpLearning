@@ -29,6 +29,21 @@ rails api: link_to
 	 root :to => "welcome#index" 			# set main page.
       d) create views/welcome/say.html.erb. 	     	# user can add contents for this root. (function.html.erb)
 
+  3) create model:
+     rails g model event name:string description:text is_public:boolean capacity:integer
+     
+     create database table:
+     bundle exec rake db:migrate
+     
+     create migration:
+     rails g migration add_status_to_events
+     bundle exec rake db:migrate
+  4) create controller:
+     rails g controller events
+  5) create views:
+     touch events/index.html.erb
+     
+
 -------------------------------------------------------------
 RoR  ======  CURD by hand
 
