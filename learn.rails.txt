@@ -28,6 +28,27 @@ rails api: link_to
 
 	 root :to => "welcome#index" 			# set main page.
       d) create views/welcome/say.html.erb. 	     	# user can add contents for this root. (function.html.erb)
+
+-------------------------------------------------------------
+RoR  ======  CURD by hand
+
+1. link_to 的使用方法
+2. mass_assignment: attr_accessible 的使用方法
+3. redirect_to 的使用方法
+4. redirect_to与render 的区别
+5. 局部template的使用方法
+6. form_for的使用方法
+7. before_filter的使用方法
+
+8. 路由： resources events
+   event_url
+   event_path
+9. respond_to do |format| 的使用方法。
+
+问题:
+1. id => event 与 event.id有关系吗？
+2. new_html_erb:  :url => events_path :method => :post???
+
    
 
 --------------------------------------------------------------

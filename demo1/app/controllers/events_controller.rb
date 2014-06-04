@@ -3,6 +3,16 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    
+    # respond_to
+
+    respond_to do |format|
+      format.html  #index.html.erb
+      format.xml {render :xml => @events.to_xml }
+      format.json {render :json => @events.to_json }
+      format.atom {@feed_title = "My Event List" } # index.atom.builder
+    end
+
   end
 
   # creat steps: new -> create
@@ -23,7 +33,8 @@ class EventsController < ApplicationController
 
     if @event.save
       flash[:noticec]="event was successfully created"
-      redirect_to :action => :index
+      #redirect_to :action => :index
+      redirect_to events_url
     else
       #redirect_to :action => :new  # redirect to new action
       render :action => :new   # send back new.html.erb.
@@ -33,6 +44,13 @@ class EventsController < ApplicationController
   def show
    # @event = Event.find(params[:id]) # replaces by before_filter
     page_title = @event.name
+
+    respond_to do |format|
+      format.html {@page_title = @event.name} # show.html.erb
+      format.json {render :json => {id:@event.id, name:@event.name}.to_json }
+      format.xml  #show.xml.builder
+    end
+
   end
 
   # edit steps: edit -> update
@@ -44,8 +62,9 @@ class EventsController < ApplicationController
     # @event = Event.find(params[:id]) # replaces by before_filter
     
     if @event.update_attributes(params[:event])
-      flash[:notice] = 'event was successfully updated'
-      redirect_to :action => :show, :id => @event
+      flash[:notice] = 'event was successfully updated'      
+      #redirect_to :action => :show, :id => @event
+      redirect_to event_url(@event)
     else
       render :action => :edit
     end
@@ -55,7 +74,8 @@ class EventsController < ApplicationController
     # @event = Event.find(params[:id]) # replaces by before_filter
     @event.destroy
     flash[:alert] = "event was siccessfully destroyed"
-    redirect_to :action => :index
+    #redirect_to :action => :index
+    redirect_to events_url
   end
 
   protected

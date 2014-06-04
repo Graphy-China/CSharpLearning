@@ -1,4 +1,9 @@
+
+<!--
 <%= form_for @event, :url => { :controller => 'events', :action => 'update', :id => @event } do |f|  %>
+-->
+
+<%= form_for @event, :url => event_path(event), :method => :put } do |f|  %>
 
 <!--  without local template.
     <%= f.label      :name, "Name" %>

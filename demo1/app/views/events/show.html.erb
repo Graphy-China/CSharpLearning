@@ -5,4 +5,9 @@
 <%= @event.capacity %>
 <%= @event.status %>
 
-<p> <%= link_to 'Back to Index', :controller => 'events', :action => 'index' %> </p>
+<p> 
+<!--
+<%= link_to 'Back to Index', :controller => 'events', :action => 'index' %> 
+-->
+<%= link_to 'Back to Index', events_path %> 
+</p>
