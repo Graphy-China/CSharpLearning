@@ -29,6 +29,33 @@ rails api: link_to
 	 root :to => "welcome#index" 			# set main page.
       d) create views/welcome/say.html.erb. 	     	# user can add contents for this root. (function.html.erb)
 
+  2-1) crate model
+       rails g model event name:string description:text is_public:boolean capacity:integer
+       bundle exec rake db:migrate
+       
+       rails g migration add_status_to_events
+       # modify migration.
+       	 add_column :events, :status, :string
+       bundle exec rake db:migrate
+
+  2-2) create controller
+       rails g controller events
+       add actions: function
+
+  2-3) create views
+       touch index.html.erb
+
+  2-4) index--> new -> create -> index
+       index--> edit-> update -> show
+       index--> show --> index
+       index--> delete --> index
+
+  2-5) emable mass assignment:
+       add this line to Gemfile:
+       gem 'protected_attributes'
+  2-6) comment in .erb file
+       <%# ...... %>
+
 -------------------------------------------------------------
 RoR  ======  CURD by hand
 
