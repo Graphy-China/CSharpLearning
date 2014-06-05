@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 
   def create
     #TBD.
-    @event = Event.new(params[:event])
+    @event = Event.new(param[:event])
     @event.save
     #render :@event.name
 
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    @event.update_attributes(param[:evebt])
+    @event.update_attributes(params[:event])
     @event.save
     
     redirect_to event_url(@event)
