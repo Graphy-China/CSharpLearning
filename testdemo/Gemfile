@@ -38,9 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-#add for ubuntu.
+
+# added for ubuntu
 gem 'therubyracer'
 
-#add support to mass assignment.
+# added for attr_accessible
 gem 'protected_attributes'
-

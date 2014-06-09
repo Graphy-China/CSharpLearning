@@ -29,6 +29,7 @@ rails api: link_to
 	 root :to => "welcome#index" 			# set main page.
       d) create views/welcome/say.html.erb. 	     	# user can add contents for this root. (function.html.erb)
 
+<<<<<<< HEAD
   3) create model:
      rails g model event name:string description:text is_public:boolean capacity:integer
      
@@ -44,10 +45,78 @@ rails api: link_to
      touch events/index.html.erb
      
 
+=======
+  2-1) crate model
+       rails g model event name:string description:text is_public:boolean capacity:integer
+       bundle exec rake db:migrate
+       
+       rails g migration add_status_to_events
+       # modify migration.
+       	 add_column :events, :status, :string
+       bundle exec rake db:migrate
+
+  2-2) create controller
+       rails g controller events
+       add actions: function
+
+  2-3) create views
+       touch index.html.erb
+
+  2-4) index--> new -> create -> index
+       index--> edit-> update -> show
+       index--> show --> index
+       index--> delete --> index
+
+  2-5) emable mass assignment:
+       add this line to Gemfile:
+       gem 'protected_attributes'
+  2-6) comment in .erb file
+       <%# ...... %>
+
+  2-7) Rest routes:
+    Prefix Verb   URI Pattern                Controller#Action
+    events GET    /events(.:format)          events#index
+           POST   /events(.:format)          events#create
+ new_event GET    /events/new(.:format)      events#new
+edit_event GET    /events/:id/edit(.:format) events#edit
+     event GET    /events/:id(.:format)      events#show
+           PATCH  /events/:id(.:format)      events#update
+           PUT    /events/:id(.:format)      events#update
+           DELETE /events/:id(.:format)      events#destroy
+      root GET    /                          events#index
+
+  2-8) Parameters:
+       new--> create.
+       events#create: 
+{"utf8"=>"✓",
+ "event"=>{"name"=>"cadjpakodfja",
+ "description"=>" asdfa"},
+ "commit"=>"Create"}
+     
+      index--> show
+      {"id"=>"5"}
+
+      index--> delete
+      {"_method"=>"delete",
+       "id"=>"8"}
+
+      index-->edit-->update:
+      {"utf8"=>"✓",
+ "_method"=>"put",
+ "event"=>{"name"=>"XXXXXXXXmodify",
+ "description"=>"YYYYYYYYzzzzz"},
+ "commit"=>"Update",
+ "id"=>"4"}
+    
+>>>>>>> 53e36e5454a801b92d5f926bb8c6371270070933
 -------------------------------------------------------------
 RoR  ======  CURD by hand
 
-1. link_to 的使用方法
+{"utf8"=>"✓",
+ "authenticity_token"=>"dsfcQ4Yi0zpjogF3wmLdDIwk7QsChM34FmKhlDnHIk4=",
+ "event"=>{"name"=>"cadjpakodfja",
+ "description"=>" asdfa"},
+ "commit"=>"Create"1. link_to 的使用方法
 2. mass_assignment: attr_accessible 的使用方法
 3. redirect_to 的使用方法
 4. redirect_to与render 的区别

@@ -54,13 +54,9 @@ GEM
     mime-types (1.25.1)
     minitest (5.3.4)
     multi_json (1.10.1)
-<<<<<<< HEAD
     polyglot (0.3.5)
-=======
-    polyglot (0.3.4)
     protected_attributes (1.0.7)
       activemodel (>= 4.0.1, < 5.0)
->>>>>>> 53e36e5454a801b92d5f926bb8c6371270070933
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -114,7 +110,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    tzinfo (1.2.1)
+    tzinfo (1.2.0)
       thread_safe (~> 0.1)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
