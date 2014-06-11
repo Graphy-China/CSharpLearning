@@ -1,0 +1,31 @@
+<h1> Listing entries </h1>
+<table id = "entries">
+<tbody>
+<tr>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Address</th>
+<th></th>
+<th></th>
+<th></th>
+<tr>
+</tbody>
+</table>
+
+<ul>
+<% @entries.each do |entry| %>
+  <li>
+   <%= entry.name %>
+   <%= entry.address %>
+   <%= entry.phone %>
+   <%= entry.email %>
+
+  
+  <%= link_to 'Show', :controller => 'entries', :action => 'show', :id => entry %>
+  <%= link_to 'Edit', :controller => 'entries', :action => 'edit', :id => entry %>
+  <%= link_to 'Delete', :controller => 'entries', :action => 'destroy', :id => entry %>
+  </li>
+<% end %>
+</ul>
+<%= link_to 'New Contact', :controller => 'entries', :action => 'new' %>
