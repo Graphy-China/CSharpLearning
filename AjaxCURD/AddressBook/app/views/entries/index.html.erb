@@ -1,0 +1,35 @@
+<h1>Listing entries</h1>
+
+<table id="entries">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.name %></td>
+        <td><%= entry.address %></td>
+        <td><%= entry.phone %></td>
+        <td><%= entry.email %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Entry form</h2>
+<div id="form">"form" %></div>
+<!--
+<%# link_to 'New Entry', new_entry_path %>
+-->
